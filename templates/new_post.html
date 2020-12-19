@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+
+{% block title %}
+New Post
+{% endblock %}
+
+{% block body %}
+<hr>
+<h2>New Post:</h2>
+<br><br>
+
+<form action="/posts" method="post">
+    <h5><label for="title">Title:</label> 
+        <input class="form-control" type="text" name="title" id="title" placeholder="Title" aria-label="Title">
+    </h5>
+    <br>
+    <h5><label for="author">Author:</label>
+        <input class="form-control" type="text" name="author" id="author" placeholder="Author Name" aria-label="Author Name">
+    </h5>
+    <br>
+    <h5><label for="post">Content:</label> 
+        <textarea class="form-control" name="content" id="content" placeholder="Enter Content" aria-label="Enter Content" rows="3" ></textarea>
+    </h5>
+    <br>
+    <input class="btn btn-dark" type="submit" value="Post">
+    <a class="btn btn-danger" href="/posts">Cancle</a>
+</form>
+<hr>
+
+{% endblock %}

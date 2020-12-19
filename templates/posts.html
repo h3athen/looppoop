@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+
+{% block title %}
+posts
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+    <h1 style="display:inline" >ALL POSTS</h1>
+    <a style="display:inline" class="btn btn-success float-right" href="/posts/new">+ New Post</a>
+</div>
+<br><hr>
+
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <h6>By: {{ post.author }} on {{ post.date_posted }}</h6>
+        <br>
+        <h5 style="white-space:pre-wrap">{{ post.content }}</h5>
+        <a class="btn btn-danger" href="/posts/delete/{{ post.id }}"> Delete </a>
+        <a class="btn btn-warning" href="/posts/edit/{{ post.id }}"> Edit </a>
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}

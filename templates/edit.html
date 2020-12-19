@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+
+{% block title %}
+Edit Post
+{% endblock %}
+
+{% block body %}
+<hr>
+<h2>Edit Post:</h2>
+<br><br>
+
+<form action="/posts/edit/{{post.id}}" method="post">
+    <h5><label for="title">Title:</label> 
+        <input class="form-control" type="text" name="title" id="title" placeholder="Title" aria-label="Title" value="{{post.title}}">
+    </h5>
+    <br>
+    <h5><label for="author">Author:</label>
+        <input class="form-control" type="text" name="author" id="author" placeholder="Author Name" aria-label="Author Name" value="{{post.author}}">
+    </h5>
+    <br>
+    <h5><label for="post">Content:</label> 
+        <textarea class="form-control" name="content" id="content" placeholder="Enter Content" aria-label="Enter Content" rows="3" >{{post.content}}</textarea>
+    </h5>
+    <br>
+    <input class="btn btn-dark" type="submit" value="Save">
+</form>
+<hr>
+
+{% endblock %}
